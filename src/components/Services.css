@@ -1,0 +1,34 @@
+#services {
+  padding: 20px; /* Adds padding around the section */
+  max-width: 1400px; /* Set a maximum width for the services section */
+  margin: 0 auto; /* Center the services section */
+}
+
+.service-grid {
+  display: grid; /* Use grid for a responsive layout */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(450px, 1fr)
+  ); /* Adjusts columns based on screen size */
+  gap: 20px; /* Adds space between grid items */
+  margin: 0 auto; /* Center the grid within the services section */
+}
+
+.service-card {
+  background-color: white; /* Sets background color to white */
+  border: 1px solid #ddd; /* Adds border for better separation */
+  border-radius: 8px; /* Rounds corners */
+  overflow: hidden; /* Ensures images fit nicely */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds slight shadow for depth */
+}
+
+.service-card img {
+  width: 99.5%; /* Makes image responsive */
+  height: auto; /* Keeps aspect ratio */
+  border: 1px solid #000000; /* Adds border around the image */
+  border-radius: 8px; /* Optional: Rounds the corners of the image border */
+}
+
+.service-card-content {
+  padding: 20px; /* Adds padding inside the card */
+}

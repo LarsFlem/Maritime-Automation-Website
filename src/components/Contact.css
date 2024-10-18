@@ -1,0 +1,14 @@
+#contact {
+    padding: 40px 20px;
+    background-color: #eee;
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width of the page */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin: 0; /* Remove default margins */
+  }
+  
+  #contact p {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+  

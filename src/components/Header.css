@@ -1,0 +1,99 @@
+/* Header styles */
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #dad9d9, #bfbebe);
+  padding: 15px 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 1000;
+  height: 80px; /* Fixed height for the header */
+  overflow: hidden;
+}
+
+/* Logo container to hold both the image and the text */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo image and text */
+}
+
+/* Logo image styling */
+.logo-image {
+  height: 90px; /* Adjust height of the logo image */
+  width: auto;
+}
+
+/* Logo text styling */
+.logo-text {
+  font-size: 32px; /* Adjust this value to scale the text */
+  font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Underline effect on hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    height: auto; /* Let the height adjust naturally on smaller screens */
+  }
+
+  .logo-text {
+    font-size: 36px; /* Adjust size for smaller screens */
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+}

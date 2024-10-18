@@ -1,0 +1,28 @@
+/* Youtube.css */
+.youtube-container {
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Center the video horizontally */
+  margin: 20px 0; /* Add space above and below */
+}
+
+/* YouTube video wrapper styling */
+.youtube-video-wrapper {
+  position: relative; /* Position relative for absolute positioning of iframe */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Set a max width for larger screens */
+  background-color: white; /* Sets background color to white */
+  border: 1px solid white; /* Adds border for better separation */
+  border-radius: 8px; /* Rounds corners */
+  overflow: hidden; /* Ensures the video fits nicely */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds slight shadow for depth */
+  aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+}
+
+.youtube-video {
+  position: absolute; /* Position absolutely within the wrapper */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  border: none; /* Optional: Remove border */
+}
