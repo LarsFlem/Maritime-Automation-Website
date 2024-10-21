@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Maritime-Automation-Website/static/css/main.802e9ca7.css",
+    "main.js": "/Maritime-Automation-Website/static/js/main.6ca7df0c.js",
+    "static/media/Commisioning30X25.jpg": "/Maritime-Automation-Website/static/media/Commisioning30X25.e2b60b7f6553b4da6f27.jpg",
+    "static/media/Design30X25.png": "/Maritime-Automation-Website/static/media/Design30X25.93d34e05ba24797fda7a.png",
+    "static/media/Assistanse30X25.jpg": "/Maritime-Automation-Website/static/media/Assistanse30X25.7990b941c17dd5960590.jpg",
+    "static/media/Backdrop.jpg": "/Maritime-Automation-Website/static/media/Backdrop.643a6590df2387518a51.jpg",
+    "static/media/Logo.png": "/Maritime-Automation-Website/static/media/Logo.95913230d3c4f62fd94b.png",
+    "static/media/Lars_Flem_CV_english.pdf": "/Maritime-Automation-Website/static/media/Lars_Flem_CV_english.eaafe9c5471611b22e36.pdf",
+    "index.html": "/Maritime-Automation-Website/index.html",
+    "main.802e9ca7.css.map": "/Maritime-Automation-Website/static/css/main.802e9ca7.css.map",
+    "main.6ca7df0c.js.map": "/Maritime-Automation-Website/static/js/main.6ca7df0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.802e9ca7.css",
+    "static/js/main.6ca7df0c.js"
+  ]
+}
