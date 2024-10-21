@@ -1,40 +1,31 @@
-name: Update Dependencies
+name: Deploy to GitHub Pages
 
 on:
-  schedule:
-    - cron: '0 0 * * 0'  # This runs every Sunday at midnight UTC
-  workflow_dispatch:  # This allows manual triggering
+  push:
+    branches:
+      - main
 
 jobs:
-  update:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Specify the Node.js version you want
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Specify Node.js version 20 explicitly
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Update packages
-        run: |
-          npm install -g npm-check-updates
-          ncu -u  # This updates package.json with new versions
-          npm install  # Install the updated packages
+    - name: Build the project
+      run: npm run build
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add package.json package-lock.json
-          git commit -m "ci: update dependencies" || echo "No changes to commit"
-
-      - name: Push changes
-        run: git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
