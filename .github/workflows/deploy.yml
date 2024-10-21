@@ -1,39 +1,40 @@
-name: Deploy React to GitHub Pages
+name: Update Dependencies
 
 on:
-  push:
-    branches:
-      - main # name of the branch you are pushing to
+  schedule:
+    - cron: '0 0 * * 0'  # This runs every Sunday at midnight UTC
+  workflow_dispatch:  # This allows manual triggering
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '22'
-      - name: Install Dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'build/.'
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/'
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Deploy
-        uses: actions/deploy-pages@v4
+          node-version: '16'  # Specify the Node.js version you want
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update packages
+        run: |
+          npm install -g npm-check-updates
+          ncu -u  # This updates package.json with new versions
+          npm install  # Install the updated packages
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add package.json package-lock.json
+          git commit -m "ci: update dependencies" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
