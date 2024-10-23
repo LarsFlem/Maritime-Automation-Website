@@ -11,12 +11,11 @@ const PdfViewer: React.FC = () => {
   const objectRef = useRef<HTMLObjectElement>(null); // Ref for object
 
   useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const userAgent = navigator.userAgent || navigator.vendor;
 
-    // Detect iOS (iPhone/iPad)
-    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
-      setIsIOS(true);
-    }
+    // Detect iOS (iPhone/iPad) - updated condition to not use window.opera
+    const isIOSDevice = /iPad|iPhone|iPod/.test(userAgent);
+    setIsIOS(isIOSDevice);
   }, []);
 
   return (
