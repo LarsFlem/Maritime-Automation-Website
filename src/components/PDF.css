@@ -15,30 +15,20 @@
   font-size: 1.8rem;
 }
 
-/* Default behavior for desktops */
+.pdf-viewer-container iframe,
 .pdf-viewer-container object {
   width: 100%;
   height: 100vh;
   border: none;
   border-radius: 8px;
+  overflow: scroll;
 }
 
 /* Mobile and smaller devices */
 @media (max-width: 768px) {
+  .pdf-viewer-container iframe,
   .pdf-viewer-container object {
-    height: auto; /* Let the height be automatic */
-    max-height: 80vh; /* Ensure it doesn't exceed the viewport */
-    width: 100%;
-    overflow: scroll;
-  }
-
-  .pdf-viewer-container iframe {
     height: auto;
-    width: 100%;
-    overflow: scroll;
-  }
-
-  .pdf-viewer-container {
-    padding: 1rem;
+    max-height: 80vh;
   }
 }
