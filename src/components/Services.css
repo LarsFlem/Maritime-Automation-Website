@@ -1,17 +1,26 @@
 #services {
-  padding: 20px; /* Adds padding around the section */
-  max-width: 1400px; /* Set a maximum width for the services section */
-  margin: 0 auto; /* Center the services section */
+  padding: 2rem; /* Default padding around the section */
 }
 
 .service-grid {
   display: grid; /* Use grid for a responsive layout */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(450px, 1fr)
-  ); /* Adjusts columns based on screen size */
-  gap: 20px; /* Adds space between grid items */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Adds space between grid items */
   margin: 0 auto; /* Center the grid within the services section */
+}
+
+/* Media query for medium screens */
+@media (max-width: 1200px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards on smaller screens */
+  }
+}
+
+/* Media query for small screens (like small phones) */
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr; /* 1 card on very small screens */
+  }
 }
 
 .service-card {
@@ -23,12 +32,24 @@
 }
 
 .service-card img {
-  width: 99.5%; /* Makes image responsive */
+  width: 100%; /* Makes image responsive */
   height: auto; /* Keeps aspect ratio */
-  border: 1px solid #000000; /* Adds border around the image */
   border-radius: 8px; /* Optional: Rounds the corners of the image border */
 }
 
 .service-card-content {
   padding: 20px; /* Adds padding inside the card */
+}
+
+/* Media query for adjusting card content padding */
+@media (max-width: 768px) {
+  .service-card-content {
+    padding: 15px; /* Adjusted padding for card content on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-content {
+    padding: 10px; /* Further reduced padding for card content on very small screens */
+  }
 }
