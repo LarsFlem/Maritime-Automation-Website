@@ -5,13 +5,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #dad9d9, #bfbebe);
+  background: linear-gradient(135deg, var(--light-gray), #bfbebe);
   padding: 0 2.5%; /* Adjust padding to be proportional */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   z-index: 1000;
   height: 5vh; /* Header takes up 5% of the viewport height */
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Logo container to hold both the image and the text */
@@ -30,9 +30,9 @@ header {
 /* Logo text styling */
 .logo-text {
   font-size: 2.5vh; /* Scale text size to fit better within header */
-  font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
+  font-family: var(--font-family-s); /* Ensure font family is consistent */
   font-weight: bold;
-  color: #333;
+  color: var(--primary-color);
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -44,11 +44,11 @@ nav ul {
 }
 
 nav a {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-family-s);
   font-weight: 400;
   font-size: 2.5vh; /* Scale link font size */
   text-decoration: none;
-  color: #333;
+  color: var(--primary-color);
   position: relative;
   transition: color 0.3s ease-in-out;
   white-space: nowrap;
@@ -66,7 +66,7 @@ nav a::after {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #333;
+  background-color: var(--primary-color);
   transition: width 0.3s ease-in-out;
 }
 
@@ -77,14 +77,8 @@ nav a:hover::after {
 /* Responsive styles */
 @media (max-width: 768px) {
   header {
-    flex-direction: row; /* Keep the header items in a row */
-    align-items: center;
     padding: 0 5%; /* Adjust padding for smaller screens */
     height: 5vh; /* Maintain height of 5% on mobile */
-  }
-
-  .logo-text {
-    font-size: 2.5vh; /* Adjust size for smaller screens */
   }
 
   nav ul {
