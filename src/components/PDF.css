@@ -1,34 +1,29 @@
+/* PDF Viewer Container */
 .pdf-viewer-container {
   width: 100%;
-  margin: 0 auto;
+  max-width: 70%; /* Max width for large screens */
+  margin: 0 auto; /* Center the PDF viewer */
   padding: 1rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light background */
 }
 
+/* Title styling */
 .pdf-viewer-container h2 {
   text-align: center;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", sans-serif; /* Use the preferred font */
   color: #333;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
 
-.pdf-viewer-container iframe,
-.pdf-viewer-container object {
+/* Styling the object or iframe (the PDF content) */
+.pdf-viewer-container object,
+.pdf-viewer-container iframe {
   width: 100%;
-  height: 100vh;
-  border: none;
+  border: none; /* Remove default borders */
   border-radius: 8px;
-  overflow: scroll;
-}
-
-/* Mobile and smaller devices */
-@media (max-width: 768px) {
-  .pdf-viewer-container iframe,
-  .pdf-viewer-container object {
-    height: auto;
-    max-height: 80vh;
-  }
+  overflow: hidden; /* Ensure no scrolling */
+  height: 100vh; /* Placeholder for full height adjustment */
 }
