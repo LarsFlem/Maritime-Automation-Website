@@ -1,3 +1,35 @@
+/* Global styles */
+body {
+  background-color: #dad9d9;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Raleway", Arial, Helvetica, sans-serif; /* Use Raleway as the default font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+/* Backdrop styling */
+.circuitry-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./components/_Pictures/Backdrop.jpg"); /* Updated path */
+  background-size: cover; /* Cover the entire area */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  opacity: 0.1; /* Set transparency level (adjust as needed) */
+  pointer-events: none; /* Allow clicks to go through the backdrop */
+  z-index: -1; /* Position behind other content */
+}
+
 /* Header styles */
 header {
   position: fixed;
@@ -6,11 +38,12 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #dad9d9, #bfbebe);
-  padding: 10px 20px; /* Adjusted padding for balance */
+  padding: 0 50px; /* Only left/right padding */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   z-index: 1000;
-  height: 5vh; /* Set header height to 5% of the viewport height */
+  height: 5vh; /* Header height set to 5% of viewport height */
+  overflow: hidden; /* Hide any overflow */
 }
 
 /* Logo container to hold both the image and the text */
@@ -18,20 +51,19 @@ header {
   display: flex;
   align-items: center;
   gap: 10px; /* Space between logo image and text */
+  height: 100%; /* Ensure the logo container takes full header height */
 }
 
 /* Logo image styling */
 .logo-image {
-  max-height: 90%; /* Max height relative to header */
+  max-height: 80%; /* Ensure logo image height is a maximum of 80% of header */
   width: auto; /* Maintain aspect ratio */
 }
 
 /* Logo text styling */
 .logo-text {
-  font-size: 2.5vw; /* Use viewport width for scaling */
-  max-font-size: 32px; /* Cap font size to prevent excessive scaling */
-  white-space: nowrap; /* Prevent text wrapping */
-  font-family: "Space Grotesk", sans-serif; /* Consistent font family */
+  font-size: 3vh; /* Font size set to 3% of viewport height */
+  font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
   font-weight: bold;
   color: #333;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -47,16 +79,32 @@ nav ul {
 nav a {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
-  font-size: 1.5vw; /* Use a relative size based on viewport */
+  font-size: 18px;
   text-decoration: none;
   color: #333;
   position: relative;
   transition: color 0.3s ease-in-out;
-  white-space: nowrap; /* Prevent navigation text from wrapping */
+  white-space: nowrap;
 }
 
 nav a:hover {
   color: #000;
+}
+
+/* Underline effect on hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Responsive styles */
@@ -64,11 +112,12 @@ nav a:hover {
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 20px;
     height: auto; /* Let the height adjust naturally on smaller screens */
   }
 
   .logo-text {
-    font-size: 4vw; /* Increase size for smaller screens */
+    font-size: 36px; /* Adjust size for smaller screens */
     margin-bottom: 10px;
   }
 
@@ -78,6 +127,6 @@ nav a:hover {
   }
 
   nav a {
-    font-size: 2vw; /* Scale down for smaller devices */
+    font-size: 16px;
   }
 }
