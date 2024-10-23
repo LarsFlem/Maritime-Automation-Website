@@ -1,35 +1,3 @@
-/* Global styles */
-body {
-  background-color: #dad9d9;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: "Raleway", Arial, Helvetica, sans-serif; /* Use Raleway as the default font */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333;
-}
-
-/* Enable smooth scrolling */
-html {
-  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
-}
-
-/* Backdrop styling */
-.circuitry-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("./components/_Pictures/Backdrop.jpg"); /* Updated path */
-  background-size: cover; /* Cover the entire area */
-  background-repeat: no-repeat; /* Prevent image repetition */
-  opacity: 0.1; /* Set transparency level (adjust as needed) */
-  pointer-events: none; /* Allow clicks to go through the backdrop */
-  z-index: -1; /* Position behind other content */
-}
-
 /* Header styles */
 header {
   position: fixed;
@@ -38,12 +6,12 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #dad9d9, #bfbebe);
-  padding: 0 50px; /* Only left/right padding */
+  padding: 0 2.5%; /* Adjust padding to be proportional */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   z-index: 1000;
-  height: 5vh; /* Header height set to 5% of viewport height */
-  overflow: hidden; /* Hide any overflow */
+  height: 5vh; /* Header takes up 5% of the viewport height */
+  overflow: hidden;
 }
 
 /* Logo container to hold both the image and the text */
@@ -51,18 +19,17 @@ header {
   display: flex;
   align-items: center;
   gap: 10px; /* Space between logo image and text */
-  height: 100%; /* Ensure the logo container takes full header height */
 }
 
 /* Logo image styling */
 .logo-image {
-  max-height: 80%; /* Ensure logo image height is a maximum of 80% of header */
+  max-height: 4vh; /* Limit logo height to ensure it fits within header */
   width: auto; /* Maintain aspect ratio */
 }
 
 /* Logo text styling */
 .logo-text {
-  font-size: 3vh; /* Font size set to 3% of viewport height */
+  font-size: 2.5vh; /* Scale text size to fit better within header */
   font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
   font-weight: bold;
   color: #333;
@@ -79,7 +46,7 @@ nav ul {
 nav a {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 2.5vh; /* Scale link font size */
   text-decoration: none;
   color: #333;
   position: relative;
@@ -110,23 +77,22 @@ nav a:hover::after {
 /* Responsive styles */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
-    height: auto; /* Let the height adjust naturally on smaller screens */
+    flex-direction: row; /* Keep the header items in a row */
+    align-items: center;
+    padding: 0 5%; /* Adjust padding for smaller screens */
+    height: 5vh; /* Maintain height of 5% on mobile */
   }
 
   .logo-text {
-    font-size: 36px; /* Adjust size for smaller screens */
-    margin-bottom: 10px;
+    font-size: 2.5vh; /* Adjust size for smaller screens */
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; /* Keep navigation in a row */
+    gap: 15px; /* Reduce gap for smaller screens */
   }
 
   nav a {
-    font-size: 16px;
+    font-size: 2.5vh; /* Scale link font size for smaller devices */
   }
 }
