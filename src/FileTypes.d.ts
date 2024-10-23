@@ -12,3 +12,7 @@ declare module "*.pdf" {
   const src: string;
   export default src;
 }
+
+interface Window {
+  MSStream?: any;
+}
