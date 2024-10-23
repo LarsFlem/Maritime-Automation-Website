@@ -1,16 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./PDF.css";
+
+// Import the PDF file
 import CV_PDF from "./_PDF/Lars_Flem_CV_english.pdf";
 
+// Define the PdfViewer component
 const PdfViewer: React.FC = () => {
   const [isIOS, setIsIOS] = useState(false);
-  const pdfRef = useRef<HTMLIFrameElement | HTMLObjectElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null); // Ref for iframe
+  const objectRef = useRef<HTMLObjectElement>(null); // Ref for object
 
   useEffect(() => {
-    const userAgent = window.navigator.userAgent;
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     // Detect iOS (iPhone/iPad)
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
       setIsIOS(true);
     }
   }, []);
@@ -18,24 +22,21 @@ const PdfViewer: React.FC = () => {
   return (
     <div className="pdf-viewer-container">
       <h2>CV</h2>
-
       {isIOS ? (
-        // Use an iframe for iOS devices or a link as a fallback
         <iframe
-          ref={pdfRef}
+          ref={iframeRef}
           src={CV_PDF}
           width="100%"
           height="750px"
-          title="CV"
+          style={{ border: 'none' }} // You can also set border here if needed
         >
           <p>
             PDF cannot be displayed. <a href={CV_PDF}>Download the PDF</a>.
           </p>
         </iframe>
       ) : (
-        // Use the object element for non-iOS devices
         <object
-          ref={pdfRef}
+          ref={objectRef}
           data={CV_PDF}
           type="application/pdf"
           width="100%"
