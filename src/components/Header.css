@@ -6,12 +6,11 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #dad9d9, #bfbebe);
-  padding: 0 2.5%; /* Adjust padding to be proportional */
+  padding: 10px 20px; /* Adjusted padding for balance */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   z-index: 1000;
-  height: 5vh; /* Header takes up 5% of the viewport height */
-  overflow: hidden;
+  height: 5vh; /* Set header height to 5% of the viewport height */
 }
 
 /* Logo container to hold both the image and the text */
@@ -23,14 +22,16 @@ header {
 
 /* Logo image styling */
 .logo-image {
-  max-height: 4vh; /* Limit logo height to ensure it fits within header */
+  max-height: 90%; /* Max height relative to header */
   width: auto; /* Maintain aspect ratio */
 }
 
 /* Logo text styling */
 .logo-text {
-  font-size: 2.5vh; /* Scale text size to fit better within header */
-  font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
+  font-size: 2.5vw; /* Use viewport width for scaling */
+  max-font-size: 32px; /* Cap font size to prevent excessive scaling */
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Space Grotesk", sans-serif; /* Consistent font family */
   font-weight: bold;
   color: #333;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -46,53 +47,37 @@ nav ul {
 nav a {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
-  font-size: 2.5vh; /* Scale link font size */
+  font-size: 1.5vw; /* Use a relative size based on viewport */
   text-decoration: none;
   color: #333;
   position: relative;
   transition: color 0.3s ease-in-out;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent navigation text from wrapping */
 }
 
 nav a:hover {
   color: #000;
 }
 
-/* Underline effect on hover */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #333;
-  transition: width 0.3s ease-in-out;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
   header {
-    flex-direction: row; /* Keep the header items in a row */
-    align-items: center;
-    padding: 0 5%; /* Adjust padding for smaller screens */
-    height: 5vh; /* Maintain height of 5% on mobile */
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; /* Let the height adjust naturally on smaller screens */
   }
 
   .logo-text {
-    font-size: 2.5vh; /* Adjust size for smaller screens */
+    font-size: 4vw; /* Increase size for smaller screens */
+    margin-bottom: 10px;
   }
 
   nav ul {
-    flex-direction: row; /* Keep navigation in a row */
-    gap: 15px; /* Reduce gap for smaller screens */
+    flex-direction: column;
+    gap: 10px;
   }
 
   nav a {
-    font-size: 2.5vh; /* Scale link font size for smaller devices */
+    font-size: 2vw; /* Scale down for smaller devices */
   }
 }
