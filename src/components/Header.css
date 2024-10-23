@@ -6,12 +6,11 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #dad9d9, #bfbebe);
-  padding: 15px 50px;
+  padding: 10px 20px; /* Adjust padding to give a balanced look */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   z-index: 1000;
   height: 5vh; /* Set header height to 5% of the viewport height */
-  overflow: hidden; /* Prevent overflow */
 }
 
 /* Logo container to hold both the image and the text */
@@ -23,14 +22,13 @@ header {
 
 /* Logo image styling */
 .logo-image {
-  height: 100%; /* Make logo image height responsive */
-  width: auto;
+  max-height: 80%; /* Set max height relative to header */
+  width: auto; /* Maintain aspect ratio */
 }
 
 /* Logo text styling */
 .logo-text {
-  font-size: 3vw; /* Adjust size for scaling based on viewport width */
-  min-width: 0; /* Prevent clipping */
+  font-size: 2.5vw; /* Adjust this value to scale the text */
   white-space: nowrap; /* Prevent text wrapping */
   font-family: "Space Grotesk", sans-serif; /* Ensure font family is consistent */
   font-weight: bold;
@@ -48,7 +46,7 @@ nav ul {
 nav a {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px; /* Use a more manageable font size */
   text-decoration: none;
   color: #333;
   position: relative;
@@ -58,4 +56,27 @@ nav a {
 
 nav a:hover {
   color: #000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; /* Let the height adjust naturally on smaller screens */
+  }
+
+  .logo-text {
+    font-size: 4vw; /* Increase size for smaller screens */
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px; /* Maintain manageable size */
+  }
 }
