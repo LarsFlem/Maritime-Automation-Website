@@ -5,6 +5,7 @@ import "./Services.css";
 import designImage from "./_Pictures/Design30X25.png";
 import commissioningImage from "./_Pictures/Commisioning30X25.jpg";
 import assistanceImage from "./_Pictures/Assistanse30X25.jpg";
+import printingImage from "./_Pictures/3DprintPhotoX.png";
 
 const Services: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Services: React.FC = () => {
         automasjon, med spesialisering i design og implementering av systemer
         for bevegelig maskineri, alarmsystemer og generell automasjon. Med en
         solid bakgrunn innen mekatronikk og erfaring fra selskaper som Moreld
-        Apply, Red Rock, HMH, Ocean Infinity Marine, Kongsberg Maritim / Rolls
+        Apply, Red Rock, HMH, Ocean Infinity Marine, Kongsberg Maritime / Rolls
         Royce Marine og Optimar Stette, kan jeg bidra til din bedrifts suksess
         med følgende:
       </p>
@@ -103,6 +104,37 @@ const Services: React.FC = () => {
                 TwinCAT, etc.
               </li>
               <li>Kostnadskontroll på eksisterende løsninger.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="service-card">
+          <img src={printingImage} alt="3D Printing" />
+          <div className="service-card-content">
+            <h3>3D Printing og Modellering</h3>
+            <ul>
+              <li>
+                3D-printingstjenester med en Bambu P1P-printer, som støtter PLA,
+                PETG, TPU, og andre materialer. Printeren gir solide resultater,
+                men har enkelte begrensninger på svært intrikate detaljer der
+                annet enn FDM print er optimalt.
+              </li>
+              <li>
+                Modellering og print av spesialtilpassede braketter, komponenter
+                for ditt bruksområde.
+              </li>
+              <li>
+                Rådgivning om riktig filamentvalg basert på applikasjonens krav
+                til styrke, fleksibilitet og varmebestandighet.
+              </li>
+              <li>
+                Print av skalerte modeller og prototyper er meget gøy å kunne
+                vise på messe.
+              </li>
+              <li>
+                Utstyr kan kjøpes inn om din jobb krever noe utover dagens
+                kapabilitet.
+              </li>
             </ul>
           </div>
         </div>
