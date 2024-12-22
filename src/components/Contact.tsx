@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     <section id="contact">
       <h2>Kontakt</h2>
       <p>Rennesøygata 14A, 4014 Stavanger</p>
-      <p>Lars.Flem@gmail.com</p>
+      <p>Lars@Maritime-Automation.no</p>
       <p>+47 917 98 722</p>
     </section>
   );
