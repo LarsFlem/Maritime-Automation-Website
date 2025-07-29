@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles.css"; 
 import Header from "./components/Header";
 import Services from "./components/Services";
@@ -7,25 +7,12 @@ import Youtube from "./components/Youtube";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer"; 
 
+//import circuitryBackground from "./components/_Pictures/Backdrop.jpg";
 import circuitryBackground from "./components/_Pictures/ChatGPTBackground.png";
+
 
 // Define the App component as a functional component
 const App: React.FC = (props) => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const backdrop = document.querySelector('.circuitry-backdrop') as HTMLElement | null;
-      if (backdrop) {
-        const scrollY = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = docHeight > 0 ? scrollY / docHeight : 0;
-        const bgPositionY = scrollPercent * 50; // 0 to 50%
-        backdrop.style.backgroundPosition = `center ${bgPositionY}%`;
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="App">
       <div

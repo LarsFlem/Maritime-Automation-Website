@@ -32,7 +32,7 @@ html {
 
 /* Backdrop styling */
 .circuitry-backdrop {
-  position: absolute; /* Changed from fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -40,7 +40,6 @@ html {
   background-image: url("./components/_Pictures/ChatGPTBackground.png"); /* Adjust path as necessary */
   background-size: cover; /* Cover the entire area */
   background-repeat: no-repeat; /* Prevent image repetition */
-  background-position: top center; /* Start at top */
   opacity: 1; /* Set transparency level (adjust as needed) */
   pointer-events: none; /* Allow clicks to go through the backdrop */
   z-index: -1; /* Position behind other content */

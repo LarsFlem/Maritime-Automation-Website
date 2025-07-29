@@ -24,7 +24,7 @@
 }
 
 .service-card {
-  background-color: white; /* Sets background color to white */
+  background-color: rgba(7, 23, 44, 0.3); /* #07172C with 30% opacity */
   border: 1px solid #ddd; /* Adds border for better separation */
   border-radius: 8px; /* Rounds corners */
   overflow: hidden; /* Ensures images fit nicely */
@@ -39,6 +39,7 @@
 
 .service-card-content {
   padding: 20px; /* Adds padding inside the card */
+  color: white; /* Makes font color white */
 }
 
 /* Media query for adjusting card content padding */
