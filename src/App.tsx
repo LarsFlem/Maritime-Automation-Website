@@ -7,7 +7,9 @@ import Youtube from "./components/Youtube";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer"; 
 
-import circuitryBackground from "./components/_Pictures/Backdrop.jpg";
+//import circuitryBackground from "./components/_Pictures/Backdrop.jpg";
+import circuitryBackground from "./components/_Pictures/ChatGPTBackground.png";
+
 
 // Define the App component as a functional component
 const App: React.FC = (props) => {
