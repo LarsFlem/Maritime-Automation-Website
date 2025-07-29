@@ -5,7 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #f0ecec, #a299f5);
+  background: linear-gradient(135deg, #f0ecec, #07172C);
   padding: 15px 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -48,7 +48,7 @@ nav a {
   font-weight: 400;
   font-size: 18px;
   text-decoration: none;
-  color: #333;
+  color: white;
   position: relative;
   transition: color 0.3s ease-in-out;
   white-space: nowrap;

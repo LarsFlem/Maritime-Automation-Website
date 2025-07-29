@@ -1,5 +1,8 @@
 #services {
   padding: 2rem; /* Default padding around the section */
+  background-color: rgba(7, 23, 44, 0.5); /* Semi-transparent background */
+  border-radius: 8px; /* Rounds the corners of the section */
+  color: white; /* Makes font color white */
 }
 
 .service-grid {
