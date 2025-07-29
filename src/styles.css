@@ -40,7 +40,7 @@ html {
   background-image: url("./components/_Pictures/ChatGPTBackground.png"); /* Adjust path as necessary */
   background-size: cover; /* Cover the entire area */
   background-repeat: no-repeat; /* Prevent image repetition */
-  opacity: 0.1; /* Set transparency level (adjust as needed) */
+  opacity: 1; /* Set transparency level (adjust as needed) */
   pointer-events: none; /* Allow clicks to go through the backdrop */
   z-index: -1; /* Position behind other content */
 }
