@@ -5,7 +5,7 @@ import "./Services.css";
 import designImage from "./_Pictures/Design30X25.png";
 import commissioningImage from "./_Pictures/Commisioning30X25.jpg";
 import assistanceImage from "./_Pictures/Assistanse30X25.jpg";
-import printingImage from "./_Pictures/3DprintPhotoX.png";
+import printingImage from "./_Pictures/3DPrint30X25.png";
 
 const Services: React.FC = () => {
   return (
