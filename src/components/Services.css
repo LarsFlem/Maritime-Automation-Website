@@ -29,9 +29,6 @@
   border-radius: 8px; /* Rounds corners */
   overflow: hidden; /* Ensures images fit nicely */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds slight shadow for depth */
-  opacity: 0.2; /* Set transparency level (adjust as needed) */
-  color: #ddd;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .service-card img {

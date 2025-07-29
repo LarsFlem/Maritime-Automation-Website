@@ -31,4 +31,15 @@ const App: React.FC = (props) => {
   );
 };
 
+// Add this at the end of your main JS file
+window.addEventListener('scroll', function() {
+  const backdrop = document.querySelector('.circuitry-backdrop');
+  const scrollY = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = docHeight > 0 ? scrollY / docHeight : 0;
+  // Move background at 50% scroll speed
+  const bgPositionY = scrollPercent * 50; // 0 to 50%
+  backdrop.style.backgroundPosition = `center ${bgPositionY}%`;
+});
+
 export default App;

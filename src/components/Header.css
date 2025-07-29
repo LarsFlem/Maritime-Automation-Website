@@ -5,7 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #5d1ac9, #bfbebe);
+  background: linear-gradient(135deg, #dad9d9, #bfbebe);
   padding: 15px 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
