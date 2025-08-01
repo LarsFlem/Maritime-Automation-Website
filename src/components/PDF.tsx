@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Document, Page } from "react-pdf";
 import "./PDF.css";
 
 // Import the PDF file
@@ -40,11 +41,10 @@ const PdfViewer: React.FC = () => {
   return (
     <div className="pdf-viewer-container">
       <h2>CV</h2>
-      <object data={CV_PDF} type="application/pdf" width="100%" height="750px">
-        <p>
-          PDF cannot be displayed. <a href={CV_PDF}>Download the PDF</a>.
-        </p>
-      </object>
+      <Document file={CV_PDF}>
+        <Page pageNumber={1} width={800} />
+        <Page pageNumber={2} width={800} />
+      </Document>
     </div>
   );
 };
